@@ -6,7 +6,7 @@ A modern, responsive student management system built with React, TypeScript, and
 
 ## 🚀 Live Demo
 
-[**[View Live Application]((https://meh-stu-portal.netlify.app/login))**]
+[[**[View Live Application]((https://meh-stu-portal.netlify.app/login))**]](https://meh-stu-portal.netlify.app/login)
 
 ## ✨ Features
 
