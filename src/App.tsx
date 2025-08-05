@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider, useAuth } from './contexts/AuthContext';
-import Layout from './components/Layout';
+import { AuthProvider, useAuth } from './contexts/AuthContext.tsx';
+import Layout from './components/Layout.tsx';
 import PrivateRoute from './components/PrivateRoute';
-import Login from './pages/Login';
+import Login from './pages/Login.tsx';
 import Signup from './pages/Signup';
 import Home from './pages/Home';
 import Users from './pages/Users';

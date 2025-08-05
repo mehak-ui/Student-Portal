@@ -33,11 +33,14 @@ const Signup: React.FC = () => {
       return;
     }
 
-    const success = await signup(name, email, password);
-    if (success) {
+    // The signup function now returns an object { success, error }
+    const result = await signup(name, email, password);
+    
+    if (result.success) {
       navigate('/');
     } else {
-      setError('Failed to create account');
+      // Use the error message from Firebase, or a default one
+      setError(result.error || 'Failed to create account');
     }
   };
 
@@ -76,6 +79,7 @@ const Signup: React.FC = () => {
                   id="name"
                   name="name"
                   type="text"
+                  autoComplete="name"
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
@@ -97,6 +101,7 @@ const Signup: React.FC = () => {
                   id="email"
                   name="email"
                   type="email"
+                  autoComplete="email"
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -118,6 +123,7 @@ const Signup: React.FC = () => {
                   id="password"
                   name="password"
                   type={showPassword ? 'text' : 'password'}
+                  autoComplete="new-password"
                   required
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
@@ -150,6 +156,7 @@ const Signup: React.FC = () => {
                   id="confirmPassword"
                   name="confirmPassword"
                   type={showConfirmPassword ? 'text' : 'password'}
+                  autoComplete="new-password"
                   required
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
