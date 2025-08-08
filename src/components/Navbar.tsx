@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { useDarkMode } from '../hooks/useDarkMode';
+import { useDarkMode } from '../hooks/useDarkMode.tsx';
 import { 
   GraduationCap, 
   Home, 
@@ -23,7 +23,7 @@ const Navbar: React.FC = () => {
 
   const handleLogout = () => {
     logout();
-    navigate('/login');
+    navigate('/');
   };
 
   const isActive = (path: string) => location.pathname === path;
